@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Reporte">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+    <TextView
+        android:textColor="@color/colorBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reportes"
+        android:textSize="30dp"/>
+
+        <EditText
+            android:inputType="text"
+            android:layout_marginTop="17dp"
+            android:id="@+id/txtname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre Operador"
+            />
+        <EditText
+            android:inputType="text"
+            android:layout_marginTop="17dp"
+            android:id="@+id/txtapellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apellido Operador"
+            />
+        <EditText
+            android:layout_marginTop="17dp"
+            android:id="@+id/txtcc"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cedula Operador"
+            />
+        <EditText
+            android:inputType="number"
+            android:layout_marginTop="17dp"
+            android:id="@+id/txtCelular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Celular Operador"
+            />
+
+        <EditText
+            android:inputType="textAutoComplete"
+            android:layout_marginTop="17dp"
+            android:id="@+id/txtDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción actividad realizada"
+            />
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Herramientas"
+            android:textSize="20dp"/>
+
+
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/radio_pirates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Martillo"
+                />
+            <RadioButton android:id="@+id/pon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ponchadora"
+               />
+            <RadioButton android:id="@+id/cab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cable utp"
+                />
+            <RadioButton android:id="@+id/cc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="router"
+                />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnsavereport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
