@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Boton de ayuda Cabronnnnnnnnnnn", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Help Button :'(", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -50,10 +50,15 @@ public class MainActivity extends AppCompatActivity {
         iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mensaje_ini();
                 Intent intent = new Intent(v.getContext(), Inicio.class);
                 startActivity(intent);
             }
         });
+    }
+
+    public void mensaje_ini(){
+        Toast.makeText(getApplicationContext(), "Ingresaste al sistema", Toast.LENGTH_LONG).show();
     }
 
     @Override
