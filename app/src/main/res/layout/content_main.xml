@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
@@ -14,10 +15,12 @@
             android:layout_marginTop="30dp"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:background="@drawable/logo"
+            android:src="@drawable/logo"
+            android:background="@drawable/btn_redondeado_white"
             android:padding="20dp"
             android:layout_gravity="center"/>
         <TextView
+            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Iniciar Sesión"
@@ -27,35 +30,52 @@
             android:textSize="25dp"
             android:textColor="@color/colorAccent"/>
         <LinearLayout
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:background="@drawable/btn_redondeado_white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="20dp">
 
-        <EditText
-            android:id="@+id/txtcorreo"
+        <TextView
+            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Correo Electrónico"
-            android:textSize="30dp"
+            android:text="Correo Electrónico"
+            android:typeface="serif"
+            android:textSize="25dp"/>
+
+        <EditText
+            android:id="@+id/txtcorreo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:typeface="serif"
             android:textColor="@color/colorBlack"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="20dp"/>
+            android:inputType="textEmailAddress"/>
+
+        <TextView
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña"
+            android:typeface="serif"
+            android:textSize="25dp"/>
+
         <EditText
             android:id="@+id/txtcontraseña"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textColor="@color/colorBlack"
-            android:hint="Contraseña"
-            android:textSize="30dp"
             android:typeface="serif"
-            android:inputType="textPassword"
-            android:layout_marginTop="20dp"/>
+            android:inputType="textPassword" />
 
         </LinearLayout>
 
         <Button
+            android:padding="15dp"
+            android:backgroundTint="@color/colorGray"
+            android:background="@drawable/btn_redondeado_white"
             android:id="@+id/btnlogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

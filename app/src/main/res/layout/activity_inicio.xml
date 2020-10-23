@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".Inicio">
 
     <LinearLayout
@@ -12,16 +13,19 @@
         android:orientation="vertical">
 
     <ImageView
+        android:padding="10dp"
+        android:src="@drawable/logo"
         android:layout_marginTop="30dp"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:background="@drawable/logo"
-        android:padding="1dp"
+        android:background="@drawable/btn_redondeado_white"
         android:layout_gravity="center" />
     <TextView
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pantalla de areas"
+        android:text="Pantalla de áreas"
         android:typeface="serif"
         android:layout_gravity="center"
         android:gravity="center"
@@ -33,13 +37,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-           android:layout_gravity="center">
+           android:layout_gravity="center"
+            >
 
             <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+                android:background="@drawable/btn_redondeado_white"
+                android:padding="17dp"
+                android:layout_marginRight="9dp">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -48,6 +56,9 @@
                     android:background="@drawable/herramienta"/>
 
                 <Button
+                    android:padding="1dp"
+                    android:background="@drawable/btn_redondeado_white"
+                    android:backgroundTint="@color/colorGray"
                     android:layout_marginTop="20dp"
                     android:id="@+id/btninv"
                     android:layout_width="wrap_content"
@@ -64,7 +75,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:background="@drawable/btn_redondeado_white"
+                android:padding="17dp"
+                >
 
                 <ImageView
                     android:layout_width="100dp"
@@ -73,6 +87,9 @@
                     android:background="@drawable/actividad"/>
 
                 <Button
+                    android:padding="1dp"
+                    android:background="@drawable/btn_redondeado_white"
+                    android:backgroundTint="@color/colorGray"
                     android:layout_marginTop="20dp"
                     android:id="@+id/btnact"
                     android:layout_width="wrap_content"
@@ -89,6 +106,7 @@
 
 
         <Button
+
             android:layout_marginTop="20dp"
             android:id="@+id/btnreport"
             android:layout_width="wrap_content"
@@ -97,6 +115,9 @@
             android:textColor="@color/colorBlack"
             android:text="Reporte Actividades"
             android:typeface="serif"
+            android:padding="10dp"
+            android:background="@drawable/btn_redondeado_white"
+            android:backgroundTint="@color/colorGray"
             />
 
 
