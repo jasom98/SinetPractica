@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1016173376547",
+    "firebase_url": "https://sinetpractica.firebaseio.com",
+    "project_id": "sinetpractica",
+    "storage_bucket": "sinetpractica.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016173376547:android:59052b9a885699775cad96",
+        "android_client_info": {
+          "package_name": "com.example.loginmain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016173376547-fc407qc63m1v9e926s8r77l0ila7l2n2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZvzCxUEVN4KWCDHveNloB2nbLUDME2Z0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016173376547-fc407qc63m1v9e926s8r77l0ila7l2n2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

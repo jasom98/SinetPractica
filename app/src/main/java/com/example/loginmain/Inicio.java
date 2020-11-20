@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Inicio extends AppCompatActivity {
+    public static String user;
     private Button irReport;
     private Button irAct;
     private Button inv;

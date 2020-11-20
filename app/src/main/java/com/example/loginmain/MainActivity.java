@@ -1,14 +1,23 @@
 package com.example.loginmain;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.TextUtils;
 import android.view.View;
 
 import android.view.Menu;
@@ -16,22 +25,31 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button iniciar;
+    //declaracion de objeto firebaseAuth
+    private FirebaseAuth firebaseAuth;
+
+    //Referenciar objetos
+    private Button btnlogin;
+    private EditText TextEmail;
+    private EditText TextContraseña;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //full screen
-        /*requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-         */
-        //
         setContentView(R.layout.activity_main);
+
+        //inicializar el objeto de firebase
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        //Inicializar referencias
+        TextEmail = (EditText) findViewById(R.id.txtcorreo);
+        TextContraseña = (EditText) findViewById(R.id.txtcontraseña);
 
 
         //boton de ayuda
@@ -44,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //boton login
-        iniciar = findViewById(R.id.btnlogin);
-        iniciar.setOnClickListener(new View.OnClickListener() {
+        btnlogin = findViewById(R.id.btnlogin);
+       btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mensaje_ini();
@@ -68,16 +86,57 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+           int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+           if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
+
+    private void LoginUsuario(){
+        final String correo = TextEmail.getText().toString().trim();
+        String contra = TextContraseña.getText().toString().trim();
+
+        if (TextUtils.isEmpty(correo)){
+            Toast.makeText(this, "Ingrese un correo", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (TextUtils.isEmpty(contra)){
+            Toast.makeText(this, "Ingrese una contraseña", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        progressDialog.setMessage("Consultando Usuario.....");
+        progressDialog.show();
+
+        //loguear con email y password
+        firebaseAuth.signInWithEmailAndPassword(correo, contra)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            int pos = correo.indexOf("@");
+                            String user = correo.substring(0,pos);
+                            Toast.makeText(MainActivity.this, "Bienvenido",
+                                    Toast.LENGTH_LONG).show();
+                            Intent ya = new Intent(getApplication(), Inicio.class);
+                            ya.putExtra(Inicio.user, user);
+                            startActivity(ya);
+                            //TextEmail.setText("");
+                            //TextContraseña.setText("");
+                        }else {
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException){
+                                Toast.makeText(MainActivity.this, "Usuario ya registrado",
+                                        Toast.LENGTH_LONG).show();
+                            }else {
+                                Toast.makeText(MainActivity.this, "Usuario no encontrado",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        }
+                        progressDialog.dismiss();
+                    }
+                });
+    }
+    
 }
