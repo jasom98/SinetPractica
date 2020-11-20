@@ -66,9 +66,14 @@ public class MainActivity extends AppCompatActivity {
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoginUsuario();
-                TextEmail.setText("");
-                TextContraseña.setText("");
+                if (validar()){
+                    LoginUsuario();
+                    TextEmail.setText("");
+                    TextContraseña.setText("");
+                }
+                //LoginUsuario();
+                //TextEmail.setText("");
+                //TextContraseña.setText("");
             }
         });
     }
@@ -107,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+
         //progressDialog.setMessage("Consultando Usuario.....");
         //progressDialog.show();
 
@@ -137,6 +143,27 @@ public class MainActivity extends AppCompatActivity {
                         //progressDialog.dismiss();
                     }
                 });
+    }
+
+    public boolean validar(){
+
+        boolean retorno=true;
+
+        String c1= TextEmail.getText().toString();
+        String c2= TextContraseña.getText().toString();
+
+
+
+        if (c1.isEmpty()){
+            TextEmail.setError("Este Campo no puede quedar vacio");
+            retorno=false;
+
+        }
+        if (c2.isEmpty()) {
+            retorno = false;
+            TextContraseña.setError("Este Campo no puede quedar vacio");
+        }
+        return retorno;
     }
     
 }
