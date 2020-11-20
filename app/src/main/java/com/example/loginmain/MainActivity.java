@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mensaje_ini();
-                Intent intent = new Intent(v.getContext(), Inicio.class);
-                startActivity(intent);
+                LoginUsuario();
+                TextEmail.setText("");
+                TextContraseña.setText("");
             }
         });
     }
@@ -107,8 +107,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        progressDialog.setMessage("Consultando Usuario.....");
-        progressDialog.show();
+        //progressDialog.setMessage("Consultando Usuario.....");
+        //progressDialog.show();
 
         //loguear con email y password
         firebaseAuth.signInWithEmailAndPassword(correo, contra)
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, "Bienvenido",
                                     Toast.LENGTH_LONG).show();
                             Intent ya = new Intent(getApplication(), Inicio.class);
-                            ya.putExtra(Inicio.user, user);
+                            //ya.putExtra(Inicio.user, user);
                             startActivity(ya);
                             //TextEmail.setText("");
                             //TextContraseña.setText("");
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.LENGTH_LONG).show();
                             }
                         }
-                        progressDialog.dismiss();
+                        //progressDialog.dismiss();
                     }
                 });
     }
