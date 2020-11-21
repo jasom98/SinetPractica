@@ -13,7 +13,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
-    <TextView
+
+       <TextView
         android:textColor="@color/colorBlack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,20 +22,21 @@
         android:textSize="30dp"/>
 
         <EditText
-            android:inputType="text"
+            android:inputType="textPersonName"
             android:layout_marginTop="17dp"
             android:id="@+id/txtname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre Operador"
+            android:hint="Nombre Completo Operador"
+            android:ems="10"
             />
         <EditText
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:layout_marginTop="17dp"
-            android:id="@+id/txtapellido"
+            android:id="@+id/txtemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Apellido Operador"
+            android:hint="Correo electronico"
             />
         <EditText
             android:layout_marginTop="17dp"
