@@ -1,5 +1,7 @@
 package com.example.loginmain.Model;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,6 +93,34 @@ public class myadapter extends FirebaseRecyclerAdapter<Persona,myadapter.myviewh
 
                         }
                     });
+                }
+            });
+
+            //borrardatos
+            holder.delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(holder.delete.getContext());
+                    builder.setTitle("Ventana de Borrado");
+                    builder.setMessage("Seguro quieres borrar el registro?");
+
+                    builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int i) {
+                            FirebaseDatabase.getInstance().getReference().child("Reportes")
+                                    .child(getRef(position).getKey())
+                                    .removeValue();
+                        }
+                    });
+
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+
+                    builder.show();
                 }
             });
 
