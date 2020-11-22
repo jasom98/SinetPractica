@@ -7,9 +7,6 @@
     android:padding="12dp"
     tools:context=".Inventario">
 
-
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recview"
         android:layout_width="match_parent"
