@@ -1,22 +1,32 @@
 package com.example.loginmain.Model;
 
-public class Persona {
+import java.io.Serializable;
 
-    private String uid;
+public class Persona implements Serializable {
+
+    private String ID;
     private String Nombre;
-    private String Correos;
+    private String Correo;
     private String Cedula;
     private String Celular;
 
     public Persona() {
     }
 
-    public String getUid() {
-        return uid;
+    public Persona(String ID, String nombre, String correo, String cedula, String celular) {
+        this.ID = ID;
+        this.Nombre = nombre;
+        this.Correo = correo;
+        this.Cedula = cedula;
+        this.Celular = celular;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getNombre() {
@@ -27,12 +37,12 @@ public class Persona {
         Nombre = nombre;
     }
 
-    public String getCorreos() {
-        return Correos;
+    public String getCorreo() {
+        return Correo;
     }
 
-    public void setCorreos(String correos) {
-        Correos = correos;
+    public void setCorreo(String correo) {
+        Correo = correo;
     }
 
     public String getCedula() {
@@ -49,10 +59,5 @@ public class Persona {
 
     public void setCelular(String celular) {
         Celular = celular;
-    }
-
-    @Override
-    public String toString() {
-        return Nombre;
     }
 }

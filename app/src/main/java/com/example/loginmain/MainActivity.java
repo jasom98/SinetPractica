@@ -66,11 +66,13 @@ public class MainActivity extends AppCompatActivity {
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validar()){
-                    LoginUsuario();
+              //  if (validar()){
+                    Intent nw = new Intent(getApplication(), Inicio.class);
+                    startActivity(nw);
+                    //LoginUsuario();
                     TextEmail.setText("");
                     TextContraseña.setText("");
-                }
+               // }
                 //LoginUsuario();
                 //TextEmail.setText("");
                 //TextContraseña.setText("");
@@ -81,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
     public void mensaje_ini(){
         Toast.makeText(getApplicationContext(), "Ingresaste al sistema", Toast.LENGTH_LONG).show();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

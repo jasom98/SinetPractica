@@ -13,6 +13,8 @@ import com.example.loginmain.Model.Persona;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -26,6 +28,7 @@ public class Reporte extends AppCompatActivity {
     private EditText txtCelularRep;
     private EditText txtDescripcionRep;
     private Button btnsaves;
+
 
 
     //referencias a base de datos
@@ -61,6 +64,7 @@ public class Reporte extends AppCompatActivity {
 
     public void Subirregistros(){
 
+        String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         String ID = UUID.randomUUID().toString();
         String nombre = txtNombresRep.getText().toString();
         String correo = txtCorreoRep.getText().toString();
@@ -70,12 +74,13 @@ public class Reporte extends AppCompatActivity {
 
         Map<String,Object> registroAct = new HashMap<>();
         registroAct.put("ID",ID);
+        registroAct.put("Fecha",date);
         registroAct.put("Nombre", nombre);
         registroAct.put("Correo", correo);
         registroAct.put("Cedula", cedula);
         registroAct.put("Celular", celular);
 
-        mDatabase.child("ReportesAct").child(ID).setValue(registroAct);
+        mDatabase.child("Reportes").child(ID).setValue(registroAct);
 
 
     }
