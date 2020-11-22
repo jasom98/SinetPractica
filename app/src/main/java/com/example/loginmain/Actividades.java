@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.loginmain.Model.AdaptadorPersona;
 import com.example.loginmain.Model.Persona;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -131,7 +132,12 @@ public class Actividades extends AppCompatActivity {
     }
 
     private void processearch(String s) {
+        FirebaseRecyclerOptions<Persona> options =
+                new FirebaseRecyclerOptions.Builder<Persona>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Reportes"), Persona.class)
+                        .build();
 
+        //adapter = new AdaptadorPersona(options);
     }
 
     @Override
