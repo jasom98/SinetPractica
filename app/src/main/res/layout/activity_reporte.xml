@@ -64,42 +64,6 @@
             android:hint="Descripción actividad realizada"
             />
 
-        <TextView
-            android:layout_marginTop="16dp"
-            android:textColor="@color/colorBlack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Herramientas"
-            android:textSize="20dp"/>
-
-
-
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <RadioButton android:id="@+id/radio_pirates"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Martillo"
-                />
-            <RadioButton android:id="@+id/pon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ponchadora"
-               />
-            <RadioButton android:id="@+id/cab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cable utp"
-                />
-            <RadioButton android:id="@+id/cc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="router"
-                />
-        </RadioGroup>
-
         <Button
             android:id="@+id/btnsavereport"
             android:layout_width="wrap_content"

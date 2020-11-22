@@ -34,10 +34,10 @@ public class myadapter extends FirebaseRecyclerAdapter<Persona,myadapter.myviewh
 
     @Override
     protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final Persona model) {
-        holder.textViewNombre.setText("Nombre Operador:\n"+model.getNombre());
-        holder.textViewCorreo.setText("Correo:\n"+model.getCorreo());
-        holder.textViewCedula.setText("Cedula:\n"+model.getCedula());
-        holder.textViewCel.setText("Celular:\n"+model.getCelular());
+        holder.textViewNombre.setText(model.getNombre());
+        holder.textViewCorreo.setText(model.getCorreo());
+        holder.textViewCedula.setText(model.getCedula());
+        holder.textViewCel.setText(model.getCelular());
 
 
 

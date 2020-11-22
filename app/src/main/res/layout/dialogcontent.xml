@@ -16,25 +16,28 @@
             android:textColor="@color/colorBlack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Actualizar"
+            android:text="Ventana de Actualización"
             android:textSize="30dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="ID"
-            android:id="@+id/txvID"
-            android:visibility="visible"/>
+            android:hint="Operador Nombre:"/>
 
         <EditText
             android:inputType="textPersonName"
-            android:layout_marginTop="17dp"
             android:id="@+id/actname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre Completo Operador"
             android:ems="10"
             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Correo:"/>
+
         <EditText
             android:inputType="textEmailAddress"
             android:id="@+id/actemail"
@@ -42,6 +45,10 @@
             android:layout_height="wrap_content"
             android:hint="Correo electronico"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Cedula:"/>
         <EditText
             android:id="@+id/actcc"
             android:inputType="number"
@@ -49,6 +56,10 @@
             android:layout_height="wrap_content"
             android:hint="Cedula Operador"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="celular"/>
         <EditText
             android:inputType="number"
             android:id="@+id/updateCelular"
@@ -72,7 +83,7 @@
             android:id="@+id/btnBuscar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Buscar"
+            android:text="Actualizar"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"/>
 
