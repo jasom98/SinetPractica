@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnlogin;
     private EditText TextEmail;
     private EditText TextContraseña;
+    private Button reset;
     private ProgressDialog progressDialog;
 
     @Override
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         //Inicializar referencias
         TextEmail = (EditText) findViewById(R.id.txtcorreo);
         TextContraseña = (EditText) findViewById(R.id.txtcontraseña);
+        reset = (Button) findViewById(R.id.btnRestablecer);
 
 
         //boton de ayuda
@@ -66,18 +68,26 @@ public class MainActivity extends AppCompatActivity {
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  if (validar()){
-                    Intent nw = new Intent(getApplication(), Inicio.class);
-                    startActivity(nw);
-                    //LoginUsuario();
-                    TextEmail.setText("");
+               if (validar()){
+                    //Intent nw = new Intent(getApplication(), Inicio.class);
+                    //startActivity(nw);
+                    LoginUsuario();
                     TextContraseña.setText("");
-               // }
+
+                }
                 //LoginUsuario();
                 //TextEmail.setText("");
                 //TextContraseña.setText("");
             }
         });
+
+       reset.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent contra = new Intent(getApplication(), ContraOlvidada.class);
+               startActivity(contra);
+           }
+       });
     }
 
     public void mensaje_ini(){
@@ -94,11 +104,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-           int id = item.getItemId();
+           //int id = item.getItemId();
 
-           if (id == R.id.action_settings) {
-            return true;
-        }
+           //if (id == R.id.action_settings) {
+            //return true;
+        //}
         return super.onOptionsItemSelected(item);
     }
 
@@ -155,8 +165,6 @@ public class MainActivity extends AppCompatActivity {
         String c1= TextEmail.getText().toString();
         String c2= TextContraseña.getText().toString();
 
-
-
         if (c1.isEmpty()){
             TextEmail.setError("Este Campo no puede quedar vacio");
             retorno=false;
@@ -167,6 +175,10 @@ public class MainActivity extends AppCompatActivity {
             TextContraseña.setError("Este Campo no puede quedar vacio");
         }
         return retorno;
+    }
+
+    private void RestablecerContra(){
+
     }
     
 }

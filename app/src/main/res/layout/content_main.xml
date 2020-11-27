@@ -55,20 +55,28 @@
             android:inputType="textEmailAddress"/>
 
         <TextView
-            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Contraseña"
             android:typeface="serif"
             android:textSize="25dp"/>
 
-        <EditText
-            android:id="@+id/txtcontraseña"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="@color/colorBlack"
-            android:typeface="serif"
-            android:inputType="textPassword" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/txtcontraseña"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorBlack"
+                    android:typeface="serif"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
 
         </LinearLayout>
 
@@ -81,6 +89,19 @@
             android:layout_gravity="center"
             android:typeface="serif"
             />
+
+        <Button
+            android:layout_marginTop="6dp"
+            android:padding="15dp"
+            android:id="@+id/btnRestablecer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:typeface="serif"
+            android:textSize="8dp"
+            android:text="Restablecer Contraseña"
+            />
+
 
 
     </LinearLayout>

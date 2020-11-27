@@ -53,37 +53,6 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/herramienta"/>
-
-                <Button
-                    android:padding="1dp"
-                    android:background="@drawable/btn_redondeado_white"
-                    android:backgroundTint="@color/colorGray"
-                    android:layout_marginTop="20dp"
-                    android:id="@+id/btninv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorBlack"
-                    android:text="Inventario"
-                    android:typeface="serif"
-                    />
-
-        </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_gravity="center"
-                android:background="@drawable/btn_redondeado_white"
-                android:padding="17dp"
-                >
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
                     android:background="@drawable/actividad"/>
 
                 <Button
@@ -91,7 +60,7 @@
                     android:background="@drawable/btn_redondeado_white"
                     android:backgroundTint="@color/colorGray"
                     android:layout_marginTop="20dp"
-                    android:id="@+id/btnact"
+                    android:id="@+id/btnMir"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -100,7 +69,9 @@
                     android:typeface="serif"
                     />
 
-            </LinearLayout>
+        </LinearLayout>
+
+
 
         </LinearLayout>
 
@@ -113,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textColor="@color/colorBlack"
-            android:text="Reporte Actividades"
+            android:text="Registrar Actividad"
             android:typeface="serif"
             android:padding="10dp"
             android:background="@drawable/btn_redondeado_white"

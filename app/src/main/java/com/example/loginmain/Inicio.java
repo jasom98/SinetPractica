@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 public class Inicio extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class Inicio extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_inicio);
 
         //reportes
@@ -28,22 +30,22 @@ public class Inicio extends AppCompatActivity {
             }
         });
         //Actividades
-        irAct = findViewById(R.id.btnact);
+        irAct = findViewById(R.id.btnMir);
         irAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in2 = new Intent(getApplicationContext(), Actividades.class);
+                Intent in2 = new Intent(getApplicationContext(), ActividadesRealizadas.class);
                 startActivity(in2);
             }
         });
         //Inventario
-        inv = findViewById(R.id.btninv);
+        /*inv = findViewById(R.id.btninv);
         inv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in3 = new Intent(getApplicationContext(), Inventario.class);
                 startActivity(in3);
             }
-        });
+        });*/
     }
 }

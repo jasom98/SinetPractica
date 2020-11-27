@@ -42,14 +42,14 @@ implements View.OnClickListener{
         holder.textViewCedula.setText("Cedula:\n"+reg.getCedula());
         holder.textViewCel.setText("Celular:\n"+reg.getCelular());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        /*holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(holder.itemView.getContext(), Actualizar.class);
                 in.putExtra("itemView",reg.getID());
                 holder.itemView.getContext().startActivity(in);
             }
-        });
+        });*/
     }
 
     @Override

@@ -54,12 +54,52 @@ public class Reporte extends AppCompatActivity {
         btnsaves.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Subirregistros();
-                Intent in = new Intent(getApplication(),Inicio.class);
-                startActivity(in);
 
+                if (Validar()){
+                    Subirregistros();
+                    Intent in = new Intent(getApplication(),Inicio.class);
+                    startActivity(in);
+                }
             }
         });
+    }
+
+    public boolean Validar(){
+
+        boolean retorno = true;
+
+        String c1 = txtDescripcionRep.getText().toString();
+        String c2 = txtCelularRep.getText().toString();
+        String c3 = txtCedulaRep.getText().toString();
+        String c4 = txtNombresRep.getText().toString();
+        String c5 = txtCorreoRep.getText().toString();
+
+        if (c1.isEmpty()) {
+            txtDescripcionRep.setError("Este Campo no puede quedar vacio");
+            retorno = false;
+        }
+
+        if (c2.isEmpty()) {
+            txtCelularRep.setError("Este Campo no puede quedar vacio");
+            retorno = false;
+        }
+
+        if (c3.isEmpty()) {
+            txtCedulaRep.setError("Este Campo no puede quedar vacio");
+            retorno = false;
+        }
+
+        if (c4.isEmpty()) {
+            txtNombresRep.setError("Este Campo no puede quedar vacio");
+            retorno = false;
+        }
+
+        if (c5.isEmpty()) {
+            txtCorreoRep.setError("Este Campo no puede quedar vacio");
+            retorno = false;
+        }
+
+        return retorno;
     }
 
     public void Subirregistros(){

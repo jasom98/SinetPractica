@@ -88,16 +88,16 @@
                                 <ImageView
                                     android:layout_marginRight="50dp"
                                     android:layout_gravity="center"
-                                    android:layout_width="90dp"
+                                    android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:background="@drawable/ic_update"
+                                    android:background="@mipmap/ic_actu"
                                     android:id="@+id/editicon"/>
 
                                 <ImageView
                                     android:layout_gravity="center"
-                                    android:layout_width="90dp"
+                                    android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:background="@drawable/ic_delete"
+                                    android:background="@mipmap/ic_borrar"
                                     android:id="@+id/deleteicon"/>
 
                         </LinearLayout>

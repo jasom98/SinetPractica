@@ -60,7 +60,7 @@ public class Actividades extends AppCompatActivity {
         rv.setAdapter(adapter);
 
         ListarRegistros();
-        ActualizarRegistros();
+        //ActualizarRegistros();
     }
 
     private void ActualizarRegistros(){
@@ -143,21 +143,7 @@ public class Actividades extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         //swicth
-        switch (item.getItemId()){
-            case R.id.icon_add:{
-                Toast.makeText(this, "Agregar",Toast.LENGTH_LONG).show();
-                break;
-            }
-            case R.id.icon_delete:{
-                Toast.makeText(this, "Borrar",Toast.LENGTH_LONG).show();
-                break;
-            }
-            case R.id.icon_save:{
-                Toast.makeText(this, "Guardar", Toast.LENGTH_LONG).show();
-                break;
-            }
-            default:break;
-        }
+
 
         return true;
     }

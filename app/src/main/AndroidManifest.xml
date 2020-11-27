@@ -11,11 +11,12 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Actualizar"></activity>
+        android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name=".ContraOlvidada"></activity>
+        <activity android:name=".Actualizar" />
         <activity android:name=".Reporte" />
         <activity android:name=".Actividades" />
-        <activity android:name=".Inventario" />
+        <activity android:name=".ActividadesRealizadas" />
         <activity android:name=".Inicio" />
         <activity
             android:name=".MainActivity"

@@ -14,7 +14,7 @@ import com.example.loginmain.Model.myadapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Inventario extends AppCompatActivity {
+public class ActividadesRealizadas extends AppCompatActivity {
 
     RecyclerView reciview;
     myadapter adapter;
@@ -22,7 +22,7 @@ public class Inventario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inventario);
+        setContentView(R.layout.activity_actividadesrealizadas);
 
         reciview = (RecyclerView) findViewById(R.id.recview);
         reciview.setLayoutManager(new LinearLayoutManager(this));

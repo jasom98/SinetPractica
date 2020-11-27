@@ -8,19 +8,6 @@
         app:showAsAction="always"
         app:actionViewClass="android.widget.SearchView"/>
 
-    <item android:id="@+id/icon_add"
-        android:icon="@drawable/ic_add"
-        android:title="Edit Done"
-        app:showAsAction="always" />
 
-    <item android:id="@+id/icon_save"
-        android:icon="@drawable/ic_save"
-        android:title="Edit Done"
-        app:showAsAction="always" />
-
-    <item android:id="@+id/icon_delete"
-        android:icon="@drawable/ic_delete"
-        android:title="Edit Done"
-        app:showAsAction="always" />
 
 </menu>
