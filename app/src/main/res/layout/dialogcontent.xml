@@ -29,7 +29,6 @@
             android:id="@+id/actname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre Completo Operador"
             android:ems="10"
             />
 
@@ -43,7 +42,6 @@
             android:id="@+id/actemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo electronico"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -54,27 +52,40 @@
             android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Cedula Operador"
             />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="celular"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Celular:"/>
         <EditText
             android:inputType="number"
             android:id="@+id/updateCelular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Celular Operador"
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Lugar"/>
         <EditText
-            android:inputType="textAutoComplete"
-            android:id="@+id/actDesc"
+            android:inputType="textPersonName"
+            android:id="@+id/updateLugar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descripción actividad realizada"
             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Actividad:"/>
+        <EditText
+            android:inputType="textAutoComplete"
+            android:id="@+id/updateActividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
 
         <Button
             android:id="@+id/btnBuscar"

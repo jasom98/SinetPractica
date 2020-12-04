@@ -66,6 +66,32 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lugar:"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/lugRep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actividad:"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/ActRep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"/>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"

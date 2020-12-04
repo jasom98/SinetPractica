@@ -38,6 +38,8 @@ public class myadapter extends FirebaseRecyclerAdapter<Persona,myadapter.myviewh
         holder.textViewCorreo.setText(model.getCorreo());
         holder.textViewCedula.setText(model.getCedula());
         holder.textViewCel.setText(model.getCelular());
+        holder.textViewLugar.setText(model.getLugar());
+        holder.textViewActividad.setText(model.getActividad());
 
 
 
@@ -47,7 +49,7 @@ public class myadapter extends FirebaseRecyclerAdapter<Persona,myadapter.myviewh
                 public void onClick(View v) {
                     final DialogPlus dialogPlus = DialogPlus.newDialog(holder.edit.getContext())
                             .setContentHolder(new ViewHolder(R.layout.dialogcontent))
-                            .setExpanded(true,1100)
+                            .setExpanded(true,1300)
                             .create();
 
                     View myview = dialogPlus.getHolderView();
@@ -56,6 +58,8 @@ public class myadapter extends FirebaseRecyclerAdapter<Persona,myadapter.myviewh
                     final EditText corre = myview.findViewById(R.id.actemail);
                     final EditText ced = myview.findViewById(R.id.actcc);
                     final EditText cel = myview.findViewById(R.id.updateCelular);
+                    final EditText Lug = myview.findViewById(R.id.updateLugar);
+                    final EditText Act = myview.findViewById(R.id.updateActividad);
 
                     Button submit = myview.findViewById(R.id.btnBuscar);
 
@@ -63,6 +67,8 @@ public class myadapter extends FirebaseRecyclerAdapter<Persona,myadapter.myviewh
                     corre.setText(model.getCorreo());
                     ced.setText(model.getCedula());
                     cel.setText(model.getCelular());
+                    Lug.setText(model.getCelular());
+                    Act.setText(model.getActividad());
 
                     dialogPlus.show();
 
@@ -74,6 +80,8 @@ public class myadapter extends FirebaseRecyclerAdapter<Persona,myadapter.myviewh
                             map.put("Correo",corre.getText().toString());
                             map.put("Cedula",ced.getText().toString());
                             map.put("Celular",cel.getText().toString());
+                            map.put("Lugar", Lug.getText().toString());
+                            map.put("Actividad",Act.getText().toString());
 
                             FirebaseDatabase.getInstance().getReference().child("Reportes")
                                     .child(getRef(position).getKey())
@@ -116,7 +124,7 @@ public class myadapter extends FirebaseRecyclerAdapter<Persona,myadapter.myviewh
                     builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
+                            dialog.dismiss();
                         }
                     });
 
@@ -136,7 +144,7 @@ public class myadapter extends FirebaseRecyclerAdapter<Persona,myadapter.myviewh
 
     class myviewholder extends RecyclerView.ViewHolder{
 
-        TextView textViewNombre,textViewCorreo,textViewCedula,textViewCel,textViewId;
+        TextView textViewNombre,textViewCorreo,textViewCedula,textViewCel,textViewLugar,textViewActividad;
         ImageView edit,delete;
 
 
@@ -147,6 +155,8 @@ public class myadapter extends FirebaseRecyclerAdapter<Persona,myadapter.myviewh
             textViewCorreo = (TextView) itemView.findViewById(R.id.correoRep);
             textViewCedula = (TextView) itemView.findViewById(R.id.cedRep);
             textViewCel = (TextView) itemView.findViewById(R.id.celRep);
+            textViewLugar = (TextView) itemView.findViewById(R.id.lugRep);
+            textViewActividad = (TextView) itemView.findViewById(R.id.ActRep);
 
             edit = (ImageView) itemView.findViewById(R.id.editicon);
             delete = (ImageView) itemView.findViewById(R.id.deleteicon);

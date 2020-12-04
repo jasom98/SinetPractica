@@ -9,16 +9,20 @@ public class Persona implements Serializable {
     private String Correo;
     private String Cedula;
     private String Celular;
+    private String Lugar;
+    private String Actividad;
 
     public Persona() {
     }
 
-    public Persona(String ID, String nombre, String correo, String cedula, String celular) {
+    public Persona(String ID, String nombre, String correo, String cedula, String celular, String lugar, String actividad) {
         this.ID = ID;
-        this.Nombre = nombre;
-        this.Correo = correo;
-        this.Cedula = cedula;
-        this.Celular = celular;
+        Nombre = nombre;
+        Correo = correo;
+        Cedula = cedula;
+        Celular = celular;
+        Lugar = lugar;
+        Actividad = actividad;
     }
 
     public String getID() {
@@ -59,5 +63,21 @@ public class Persona implements Serializable {
 
     public void setCelular(String celular) {
         Celular = celular;
+    }
+
+    public String getLugar() {
+        return Lugar;
+    }
+
+    public void setLugar(String lugar) {
+        Lugar = lugar;
+    }
+
+    public String getActividad() {
+        return Actividad;
+    }
+
+    public void setActividad(String actividad) {
+        Actividad = actividad;
     }
 }

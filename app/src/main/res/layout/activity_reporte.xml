@@ -14,55 +14,126 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
 
-       <TextView
-        android:textColor="@color/colorBlack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registro de actividad"
-        android:textSize="30dp"/>
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro de actividad"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            android:textSize="30dp"/>
+
+
+        <TextView
+            android:typeface="serif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Operador:"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp"/>
 
         <EditText
             android:inputType="textPersonName"
-            android:layout_marginTop="17dp"
             android:id="@+id/txtname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre Completo Operador"
             android:ems="10"
             />
+
+        <TextView
+            android:typeface="serif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correo electrónico:"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp"/>
         <EditText
             android:inputType="textEmailAddress"
-            android:layout_marginTop="17dp"
             android:id="@+id/txtemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo electronico"
             />
+
+
+        <TextView
+            android:typeface="serif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cedula:"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp"/>
+
         <EditText
-            android:layout_marginTop="17dp"
             android:id="@+id/txtcc"
             android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Cedula Operador"
             />
+
+        <TextView
+            android:typeface="serif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Celular:"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp"/>
         <EditText
             android:inputType="number"
-            android:layout_marginTop="17dp"
             android:id="@+id/txtCelular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Celular Operador"
             />
 
-        <EditText
-            android:inputType="textAutoComplete"
-            android:layout_marginTop="17dp"
-            android:id="@+id/txtDesc"
+        <TextView
+            android:typeface="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descripción actividad realizada"
+            android:text="Lugar:"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp"/>
+        <EditText
+            android:inputType="textCapSentences"
+            android:id="@+id/txtLugar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             />
+
+        <TextView
+            android:typeface="serif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actividad:"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp"/>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rdCamaras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instalación de camaras"/>
+            <RadioButton
+                android:id="@+id/rdTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instalación de Tv"/>
+            <RadioButton
+                android:id="@+id/rdInternet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instalación de Internet"/>
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/txvActividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Actividadad Seleccionada:"
+            android:visibility="invisible"/>
 
         <Button
             android:id="@+id/btnsavereport"
@@ -70,7 +141,9 @@
             android:layout_height="wrap_content"
             android:text="Guardar"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            />
+
 
 
     </LinearLayout>

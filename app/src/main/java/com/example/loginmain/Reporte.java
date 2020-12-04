@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.loginmain.Model.Persona;
@@ -26,10 +28,10 @@ public class Reporte extends AppCompatActivity {
     private EditText txtCorreoRep;
     private EditText txtCedulaRep;
     private EditText txtCelularRep;
-    private EditText txtDescripcionRep;
+    private EditText txtLugarRep;
+    private EditText txvAct;
     private Button btnsaves;
-
-
+    private RadioButton rdCam,rdTv,rdInter;
 
     //referencias a base de datos
     DatabaseReference mDatabase;
@@ -47,7 +49,13 @@ public class Reporte extends AppCompatActivity {
         txtCorreoRep = (EditText) findViewById(R.id.txtemail);
         txtCedulaRep = (EditText) findViewById(R.id.txtcc);
         txtCelularRep = (EditText) findViewById(R.id.txtCelular);
-        txtDescripcionRep = (EditText) findViewById(R.id.txtDesc);
+        txtLugarRep = (EditText) findViewById(R.id.txtLugar);
+
+        txvAct = (EditText) findViewById(R.id.txvActividad);
+
+        rdCam = (RadioButton) findViewById(R.id.rdCamaras);
+        rdTv = (RadioButton) findViewById(R.id.rdTV);
+        rdInter = (RadioButton) findViewById(R.id.rdInternet);
 
 
         btnsaves = findViewById(R.id.btnsavereport);
@@ -62,22 +70,20 @@ public class Reporte extends AppCompatActivity {
                 }
             }
         });
+        RadioSeleccion();
     }
 
     public boolean Validar(){
 
         boolean retorno = true;
 
-        String c1 = txtDescripcionRep.getText().toString();
+
         String c2 = txtCelularRep.getText().toString();
         String c3 = txtCedulaRep.getText().toString();
         String c4 = txtNombresRep.getText().toString();
         String c5 = txtCorreoRep.getText().toString();
 
-        if (c1.isEmpty()) {
-            txtDescripcionRep.setError("Este Campo no puede quedar vacio");
-            retorno = false;
-        }
+
 
         if (c2.isEmpty()) {
             txtCelularRep.setError("Este Campo no puede quedar vacio");
@@ -102,6 +108,30 @@ public class Reporte extends AppCompatActivity {
         return retorno;
     }
 
+    private void RadioSeleccion(){
+        rdInter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txvAct.setText("Instalación de internet");
+            }
+        });
+
+        rdTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txvAct.setText("Instalación de TV");
+            }
+        });
+
+        rdCam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txvAct.setText("Instalación de Camaras");
+            }
+        });
+
+    }
+
     public void Subirregistros(){
 
         String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
@@ -110,15 +140,22 @@ public class Reporte extends AppCompatActivity {
         String correo = txtCorreoRep.getText().toString();
         String cedula = txtCedulaRep.getText().toString();
         String celular = txtCelularRep.getText().toString();
+        String Lugar = txtLugarRep.getText().toString();
+        String  act = txvAct.getText().toString();
 
 
         Map<String,Object> registroAct = new HashMap<>();
-        registroAct.put("ID",ID);
+
+
+        //registroAct.put("ID",ID);
         registroAct.put("Fecha",date);
         registroAct.put("Nombre", nombre);
         registroAct.put("Correo", correo);
         registroAct.put("Cedula", cedula);
         registroAct.put("Celular", celular);
+        registroAct.put("Lugar",Lugar);
+        registroAct.put("actividad", act);
+
 
         mDatabase.child("Reportes").child(ID).setValue(registroAct);
 
